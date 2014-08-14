@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<!--HTML5 doctype-->
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+        <script type="text/javascript" charset="utf-8" src="intelxdk.js"></script>
+
+        <script type="text/javascript" language="javascript">
+            // This event handler is fired once the AppMobi libraries are ready
+            function onDeviceReady() {
+                //use AppMobi viewport to handle device resolution differences if you want
+               
+                //hide splash screen now that our app is ready to run
+                AppMobi.device.hideSplashScreen();
+                setTimeout(function(){
+                    $.ui.launch();
+                },50);
+            }
+
+            //initial event handler to detect when appMobi is ready to roll
+            document.addEventListener("appMobi.device.ready",onDeviceReady,false);
+        </script> 
+
+        <script src="js/appframework.ui.min.js"></script>
+        <script>
+            $.ui.autoLaunch=false;
+            $.ui.useOSThemes=false;
+            $.ui.blockPageScroll();
+            $(document).ready(function(){
+                if($.ui.useOSThemes&&!$.os.ios&&$("#afui").get(0).className!=="ios")
+                $("#afui").removeClass("ios");
+            });
+        </script>
+        <link href="css/icons.css" rel="stylesheet" type="text/css"></link>
+        <link href="css/af.ui.css" rel="stylesheet" type="text/css"></link>
+    </head>
+    <body>
+        <div id="afui" class='ios7'>
+          
+<div id="header"></div>
+          
+<div id="content">
+	          
+	<div class="panel" title="首页" data-nav="nav_0" id="main" selected="selected" data-appbuilder-object="page" data-header="header_0">
+		<a class="button" href="#" style="" data-appbuilder-object="button" data-position="static" data-transition="slide" id="pop_1">TEST1</a>
+	</div>
+	<div class="panel" title="发现" data-nav="nav_0" id="find" data-appbuilder-object="page" data-header="header_1"></div>
+	<div class="panel" title="话题" data-nav="nav_0" id="topic" data-appbuilder-object="page" data-header="header_2"></div>
+	<div class="panel" title="用户" data-nav="nav_0" id="user" data-appbuilder-object="page" data-header="header_3"></div>
+	<div class="panel" title="通知" data-nav="nav_0" id="info" data-appbuilder-object="page" data-header="header_4"></div>
+</div>
+          
+<div id="navbar">
+	<a href="#page_0" class="icon home">首页</a><a href="#page_0" class="icon heart">发现</a><a href="#page_0" class="icon chat">话题</a><a href="#page_0" class="icon user">用户</a><a href="#page_0" class="icon message">通知</a>
+</div>
+        
+<header id="header_0" data-appbuilder-object="header">
+	<h1 id="pageTitle" class="">
+		POP社区
+	</h1>
+</header>
+<nav id="nav_0" data-appbuilder-object="nav">
+	<h1>
+		热门话题
+	</h1>
+</nav>
+<header id="header_1" data-appbuilder-object="header">
+	<a id="backButton" href="#main" class="button">Back</a>
+	<h1 class="">
+		发现
+	</h1>
+</header>
+<header id="header_2" data-appbuilder-object="header">
+	<a id="backButton" href="#main" class="button">Back</a>
+	<h1 class="">
+		话题
+	</h1>
+</header>
+<header id="header_3" data-appbuilder-object="header">
+	<a id="backButton" href="#main" class="button">Back</a>
+	<h1 class="">
+		用户
+	</h1>
+</header>
+<header id="header_4" data-appbuilder-object="header">
+	<a id="backButton" href="#main" class="button">Back</a>
+	<h1 class="">
+		通知
+	</h1>
+</header>
+        </div>
+    </body>
+</html>
